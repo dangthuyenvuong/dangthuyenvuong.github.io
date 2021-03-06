@@ -1,0 +1,251 @@
+#header {
+    padding: 40px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99999;
+    // background: #101010;
+
+    .container {
+        display: flex;
+        align-items: center;
+        // padding-right: 45px;
+    }
+
+    .logo {
+        position: fixed;
+        width: 90px;
+        display: block;
+        top: 0;
+        left: 0;
+        padding: 30px 10px;
+        svg {
+            stroke-width: 7px;
+
+            path {
+                stroke: transparent;
+            }
+        }
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        width: 30px;
+        margin-left: auto;
+        // cursor: pointer;
+        position: relative;
+        @include css3(transform, rotate(90deg));
+
+        backface-visibility: hidden;
+
+        span {
+            background: white;
+            height: 2px;
+            border-radius: 10px;
+            display: block;
+            margin: 3px 0;
+            @include transition();
+
+            &:nth-child(1) {}
+
+            &:nth-child(2) {
+                // width: 50%;
+                // margin-left: auto;
+                @include css3(transform, translate(-5px, 0));
+            }
+
+            &:nth-child(3) {
+                // width: 30%;
+                // margin-right: auto;
+            }
+        }
+
+        &:hover {
+
+            span:nth-child(2) {
+                // width: 50%;
+                // margin-left: auto;
+                @include css3(transform, translate(0, 0));
+
+                // @include css3(animation, hoverHambuger .3s ease-in-out infinite);
+            }
+        }
+
+        // &:before,
+        // &:after{
+        //     content: '';
+        //     display: block;
+        //     position: absolute;
+        //     width: 100px;
+        //     height: 100px;
+        //     border: 1px solid white;
+        //     border-radius: 1000px;
+        // }
+
+        // &:after{
+        //     @include css3(animation, rotateHamburger 10s ease infinite )
+        // }
+        // &:before{
+        //     @include css3(transform, skew(10deg, 0));
+        // }
+    }
+
+    .circle {
+        width: 100px;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        @include css3(transform, translate(-50%, -50%));
+
+        path {
+            stroke: transparent;
+        }
+    }
+
+    @media(max-width: 767.9px){
+        padding: 20px 0;
+        .logo{
+            width: 70px;
+            padding: 10px;
+        }
+        .circle{
+            width: 70px;
+        }
+    }
+}
+
+#menu {
+    position: fixed;
+    z-index: 10000;
+    background: $bg-cl;
+    height: calc(100vh + 1px);
+    width: 100%;
+    bottom: calc(100% + 100px);
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    &.active{
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+
+        li {
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            text-align: center;
+            &.opacity{
+                opacity: 0.3;
+            }
+        }
+
+        a {
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            display: inline-block;
+            text-align: center;
+            font-family: 'Title';
+            font-weight: 100;
+            span{
+                display: inherit;
+            }
+            img {
+                display: none;
+            }
+
+            
+        }
+    }
+
+    canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    .worktogether {
+        display: flex;
+        justify-content: center;
+        width: 700px;
+        max-width: 100%;
+        align-content: center;
+        width: 100%;
+
+        svg {
+            width: 600px;
+
+            path {
+                stroke: white;
+            }
+        }
+
+        img {
+            object-fit: contain;
+        }
+    }
+
+    @media(max-width: 767.9px){
+        ul{
+            a{
+                font-size: 25px;
+                span{
+                    
+                }
+            }
+        }
+    }
+}
+
+.loadingpage {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: $bg-cl;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10100;
+
+    svg {
+        width: 700px;
+    }
+}
+
+@keyframes hoverHambuger {
+    0% {
+        @include css3(transform, scale(1))
+    }
+
+    50% {
+        @include css3(transform, scale(1.1))
+    }
+
+    100% {
+        @include css3(transform, scale(1))
+    }
+}
+
+// @keyframes rotateHamburger{
+//     from{
+//         @include css3(transform, rotateZ(0) rotateY(0));
+//     }to{
+//         @include css3(transform, rotateZ(360deg) rotateY(360deg));
+//     }
+// }

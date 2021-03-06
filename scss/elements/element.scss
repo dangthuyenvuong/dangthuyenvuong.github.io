@@ -1,0 +1,70 @@
+@font-face {
+    font-family: "Title";
+
+
+    src: url("../fonts/9683fdc6d5bbda0d0dd82a1d36982274.eot");
+    src: url("../fonts/9683fdc6d5bbda0d0dd82a1d36982274.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/9683fdc6d5bbda0d0dd82a1d36982274.woff2") format("woff2"),
+        url("../fonts/9683fdc6d5bbda0d0dd82a1d36982274.woff") format("woff"),
+        url("../fonts/9683fdc6d5bbda0d0dd82a1d36982274.ttf") format("truetype"),
+        url("../fonts/9683fdc6d5bbda0d0dd82a1d36982274.svg#Acta Display") format("svg");
+}
+
+// @font-face {
+//     font-family: "Karla";
+//     src: url("//db.onlinewebfonts.com/t/750e3658d4460a397a551dfac26bb272.eot");
+//     src: url("//db.onlinewebfonts.com/t/750e3658d4460a397a551dfac26bb272.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/750e3658d4460a397a551dfac26bb272.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/750e3658d4460a397a551dfac26bb272.woff") format("woff"), url("//db.onlinewebfonts.com/t/750e3658d4460a397a551dfac26bb272.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/750e3658d4460a397a551dfac26bb272.svg#Karla") format("svg");
+// }
+
+body {
+    background: $bg-cl;
+    // font-family: 'Karla', Arial, Helvetica, sans-serif;
+    font-family: 'Neue Montreal', Arial, Helvetica, sans-serif;
+    // font-family: 'Acta Display', Arial, Helvetica, sans-serif;
+    // font-family: 'Cormorant', serif;
+    // font-family: 'IM Fell Double Pica', serif;
+    // font-family: 'Romanesco', cursive;
+}
+
+@mixin transition() {
+    @include css3(transition, all .3s ease-in-out);
+}
+
+.text-deco {
+    font-size: 170px;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    opacity: .1;
+    font-family: 'Tital Arial';
+}
+
+.main-sub-title {
+    font-size: 25px;
+    letter-spacing: 10px;
+    color: #868686;
+    margin-top: 30px;
+    font-family: 'Tital Arial';
+}
+
+.main-title {
+    font-size: 110px;
+    font-weight: bold;
+    color: white;
+    font-family: 'Tital Arial';
+}
+
+@media(max-width: 767.9px) {
+    .main-title {
+        font-size: 45px;
+    }
+
+    .main-sub-title {
+        font-size: 18px;
+        letter-spacing: 5px;
+    }
+
+    .text-deco {
+        font-size: 80px;
+    }
+}
